@@ -1,0 +1,60 @@
+# ----- Current -----
+# Git
+alias gs='git status'
+alias gitchris='git config --global user.name chriswsuarez && git config --global user.email chriswsuarez@utexas.edu'
+alias gsu='git submodule update --init --recursive'
+
+# File navigation
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
+
+alias sws='source ./devel/setup.bash'
+alias sis='source ./install/setup.bash'
+
+# ROS
+alias killros='killall -9 roscore ; killall -9 rosmaster'
+
+# OpenVPN
+alias open_vpn='sudo openvpn --config ~/m17_dallas_tx.ovpn'
+
+# NRG specific
+alias xaviermaster='export ROS_MASTER_URI=http://xavier:11311 && export ROS_IP=192.168.0.100'
+alias m17master='export ROS_MASTER_URI=http://192.168.0.100:11311 && export ROS_IP=192.168.0.100'
+alias localmaster='export ROS_MASTER_URI=http://localhost:11311 && export ROS_IP=127.0.0.1'
+alias nuvomaster='export ROS_MASTER_URI=http://nuvo:11311 && export ROS_IP=192.168.0.100'
+alias nuvovpnmaster='export ROS_MASTER_URI=http://nuvo_vpn:11311 && export ROS_IP=100.96.1.5'
+alias nuvoutmaster='export ROS_MASTER_URI=http://nuvo_ut:11311 && export ROS_IP=10.147.253.33'
+alias m17vpnmaster='export ROS_MASTER_URI=http://m17_vpn:11311 && export ROS_IP=100.96.1.5'
+
+alias sshxavier='ssh -X xavier@xavier'
+alias sshwalrus='ssh -X dsat@walrus'
+alias sshprowl='ssh -p 2401 traclabs@prowl'
+alias sshnuvo='ssh -X nrgadmin@nuvo'
+alias sshnuvovpn='ssh -X nrgadmin@nuvo_vpn'
+alias sshnuvout='ssh -X nrgadmin@nuvo_ut'
+
+alias srw='source ~/walrus_ws/devel/setup.bash && export ROS_IP=192.168.0.100'
+alias srq='source ~/nrg_walrus_ws/devel/setup.bash && source ~/nrg_walrus_ws/src/walrus-nrg/walrus_segway/config/segway_config.bash && export ROS_IP=192.168.0.100'
+
+alias prowl_route='sudo route add -net 192.168.0.0 netmask 255.255.255.0 gw 192.168.2.148'
+
+alias gps_init='sudo modprobe garmin_gps && gpsd -S 4000 /dev/sensors/garmin_gps'
+alias gpsd_init='gpsd -S 4000 /dev/sensors/garmin_gps'
+alias gpscat_init='gpscat -s 19200 /dev/sensors/garmin_gps'
+alias gps_ros='rosrun gpsd_client gpsd_client _port:=4000'
+
+alias chmodall='sudo chmod a+rw /dev/ttyACM0 && sudo chmod a+rw /dev/ttyACM1 && sudo chmod a+rw /dev/ttyACM2 && sudo chmod a+rw /dev/ttyUSB0 && sudo chmod a+rw /dev/ttyUSB1' 
+
+alias phx_setup='xhost +si:localuser:root && cd ~/phoenix_ws/src/phoenix-r1 && catkin-docker run'
+
+alias segstop='sudo service segway-core stop'
+alias segstart='sudo service segway-core start'
+alias segchk='sudo tail /var/log/upstart/segway-core.log -n 30'
+
+# ----- Deprecated -----
+alias reset_clock='invoke-rc.d chrony restart'
+alias hard_reset_clock='/etc/init.d/chrony stop && sudo ntpdate 192.168.1.75 && /etc/init.d/chrony start'

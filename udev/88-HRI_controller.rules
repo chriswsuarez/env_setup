@@ -1,0 +1,1 @@
+SUBSYSTEMS=="usb", KERNEL=="ttyACM[0-9]*", ACTION=="add", ATTRS{idVendor}=="ffff", ATTRS{idProduct}=="f005", MODE="666", SYMLINK+="controllers/hri", GROUP="dialout"

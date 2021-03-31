@@ -1,0 +1,1 @@
+SUBSYSTEM=="usb", KERNEL=="ttyUSB[0-9]*", ACTION=="add", ATTR{idProduct}=="0018", ATTR{idVendor}=="2886", MODE="666", SYMLINK+="sensors/respeaker"

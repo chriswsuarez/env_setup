@@ -1,0 +1,1 @@
+SUBSYSTEMS=="usb", KERNEL=="js[0-9]*", ACTION=="add", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c21f" MODE="666", SYMLINK+="controllers/logitech", GROUP="input"

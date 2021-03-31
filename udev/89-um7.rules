@@ -1,0 +1,2 @@
+# Udev rule for UM7 IMU.  If there are multiple UM7s then this will need to be rewritten with modular symlink names.
+SUBSYSTEMS=="usb", KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", MODE="666", SYMLINK+="sensors/um7", GROUP="dialout"
