@@ -5,15 +5,21 @@ alias gitchris='git config --global user.name chriswsuarez && git config --globa
 alias gsu='git submodule update --init --recursive'
 
 # File navigation
-alias ..='cd ..'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../../'
+alias .. = 'cd ../../'
+alias ... = 'cd ../../../'
+alias .... = 'cd ../../../../'
+alias .5 = 'cd ../../../../../'
+alias .6 = 'cd ../../../../../../'
 
 alias sws='source ./devel/setup.bash'
 alias sis='source ./install/setup.bash'
+
+# Sourcing and init bashrc
+alias src_walrus = 'export SEGWAY_IP_ADDRESS=192.168.0.40 && export SEGWAY_IP_PORT_NUM=8080'
+alias src_chris = 'source ~/chris_setup/aliases/chris_aliases'
+alias initrc_walrus = "echo 'export SEGWAY_IP_ADDRESS=192.168.0.40' >> ~/.bashrc && echo 'export SEGWAY_IP_PORT_NUM=8080' >> ~/.bashrc"
+alias initrc_aliases = "echo 'source ~/chris_setup/aliases/chris_aliases' >> ~/.bashrc" 
+alias init_bashrc = 'initrc_walrus && initrc_alias'
 
 # ROS
 alias killros='killall -9 roscore ; killall -9 rosmaster'
