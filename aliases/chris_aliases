@@ -27,6 +27,9 @@ alias killros='killall -9 roscore ; killall -9 rosmaster'
 # OpenVPN
 alias open_vpn='sudo openvpn --config ~/m17_dallas_tx.ovpn'
 
+# Cuda
+alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export CD_LIBRARY_PATH="/usr/local/cuda-10.0/bin:$PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
+
 # NRG specific
 alias xaviermaster='export ROS_MASTER_URI=http://xavier:11311 && export ROS_IP=192.168.0.100'
 alias m17master='export ROS_MASTER_URI=http://192.168.0.100:11311 && export ROS_IP=192.168.0.100'
