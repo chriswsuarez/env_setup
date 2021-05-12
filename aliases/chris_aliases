@@ -45,6 +45,7 @@ alias sshprowl='ssh -p 2401 traclabs@prowl'
 alias sshnuvo='ssh -X nrgadmin@nuvo'
 alias sshnuvovpn='ssh -X nrgadmin@nuvo_vpn'
 alias sshnuvout='ssh -X nrgadmin@nuvo_ut'
+alias sshzotac='ssh -X nrgadmin@zotac'
 
 alias srw='source ~/walrus_ws/devel/setup.bash && export ROS_IP=192.168.0.100'
 alias srq='source ~/nrg_walrus_ws/devel/setup.bash && source ~/nrg_walrus_ws/src/walrus-nrg/walrus_segway/config/segway_config.bash && export ROS_IP=192.168.0.100'
