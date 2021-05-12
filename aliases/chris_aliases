@@ -65,6 +65,8 @@ alias segstop='sudo service segway-core stop'
 alias segstart='sudo service segway-core start'
 alias segchk='sudo tail /var/log/upstart/segway-core.log -n 30'
 
+alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
+
 # ----- Deprecated -----
 alias reset_clock='invoke-rc.d chrony restart'
 alias hard_reset_clock='/etc/init.d/chrony stop && sudo ntpdate 192.168.1.75 && /etc/init.d/chrony start'
