@@ -60,6 +60,7 @@ alias gps_ros='rosrun gpsd_client gpsd_client _port:=4000'
 alias chmodall='sudo chmod a+rw /dev/ttyACM0 && sudo chmod a+rw /dev/ttyACM1 && sudo chmod a+rw /dev/ttyACM2 && sudo chmod a+rw /dev/ttyUSB0 && sudo chmod a+rw /dev/ttyUSB1' 
 
 alias phx_setup='xhost +si:localuser:root && cd ~/phoenix_ws/src/phoenix-r1 && catkin-docker run'
+alias save_phx_map='rosrun map_server map_saver map:=/walrus/point_cloud_cache/renderers/full_map'
 
 alias segstop='sudo service segway-core stop'
 alias segstart='sudo service segway-core start'
