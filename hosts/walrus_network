@@ -1,0 +1,16 @@
+# Walrus network
+192.168.0.1	    walrus_router
+192.168.0.20	base_radio
+192.168.0.21	ob_radio
+192.168.0.40	walrus
+192.168.0.90	xavier
+192.168.0.95	dsat
+192.168.0.98	station
+192.168.0.99	prowl
+192.168.0.100	m17
+192.168.0.101	nuvo
+192.168.0.102	zotac
+192.168.0.128	ouster
+192.168.0.131	jackal
+192.168.0.222	duro1
+192.168.0.223	duro2

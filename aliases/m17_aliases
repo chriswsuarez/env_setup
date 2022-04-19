@@ -1,35 +1,5 @@
-# ----- Current -----
-# Git
-alias gs='git status'
-alias gitchris='git config --global user.name chriswsuarez && git config --global user.email chriswsuarez@utexas.edu'
-alias gsu='git submodule update --init --recursive'
-
-# File navigation
-alias ..='cd ../../'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .5='cd ../../../../../'
-alias .6='cd ../../../../../../'
-
-alias sws='source ./devel/setup.bash'
-alias sis='source ./install/setup.bash'
-
-# Sourcing and init bashrc
-alias src_walrus='export SEGWAY_IP_ADDRESS=192.168.0.40 && export SEGWAY_IP_PORT_NUM=8080'
-alias src_chris='source ~/chris_setup/aliases/chris_aliases'
-alias initrc_walrus="echo 'export SEGWAY_IP_ADDRESS=192.168.0.40' >> ~/.bashrc && echo 'export SEGWAY_IP_PORT_NUM=8080' >> ~/.bashrc"
-alias initrc_aliases="echo 'source ~/chris_setup/aliases/chris_aliases' >> ~/.bashrc" 
-alias init_bashrc='initrc_walrus && initrc_alias'
-
-# ROS
-alias killros='killall -9 roscore ; killall -9 rosmaster'
-
 # OpenVPN
 alias open_vpn='sudo openvpn --config ~/m17_dallas_tx.ovpn'
-
-# Cuda
-alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export CD_LIBRARY_PATH="/usr/local/cuda-10.0/bin:$PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
-# alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
 
 # NRG specific
 alias xaviermaster='export ROS_MASTER_URI=http://xavier:11311 && export ROS_IP=192.168.0.100'
@@ -67,26 +37,11 @@ alias jackalethmaster='export ROS_MASTER_URI=http://jackal_eth:11311 && export R
 alias jackalviconmaster='export ROS_MASTER_URI=http://jackal_vicon:11311 && export ROS_IP=192.168.1.219'
 alias jackalnrgmaster='export ROS_MASTER_URI=http://jackal_nrg:11311 && export ROS_IP=192.168.1.100'
 
-alias srw='source ~/walrus_ws/devel/setup.bash && export ROS_IP=192.168.0.100'
-alias srq='source ~/nrg_walrus_ws/devel/setup.bash && source ~/nrg_walrus_ws/src/walrus-nrg/walrus_segway/config/segway_config.bash && export ROS_IP=192.168.0.100'
-
-alias prowl_route='sudo route add -net 192.168.0.0 netmask 255.255.255.0 gw 192.168.2.148'
-
 alias gps_init='sudo modprobe garmin_gps && gpsd -S 4000 /dev/sensors/garmin_gps'
 alias gpsd_init='gpsd -S 4000 /dev/sensors/garmin_gps'
 alias gpscat_init='gpscat -s 19200 /dev/sensors/garmin_gps'
 alias gps_ros='rosrun gpsd_client gpsd_client _port:=4000'
 
-alias chmodall='sudo chmod a+rw /dev/ttyACM0 && sudo chmod a+rw /dev/ttyACM1 && sudo chmod a+rw /dev/ttyACM2 && sudo chmod a+rw /dev/ttyUSB0 && sudo chmod a+rw /dev/ttyUSB1' 
-
 alias phx_setup='xhost +si:localuser:root && cd ~/phoenix_ws/src/phoenix-r1 && catkin-docker run'
 alias save_phx_map='rosrun map_server map_saver map:=/walrus/point_cloud_cache/renderers/full_map'
 alias save_map='rosrun map_server map_saver map:=/walrus/gmap'
-
-alias segstop='sudo service segway-core stop'
-alias segstart='sudo service segway-core start'
-alias segchk='sudo tail /var/log/upstart/segway-core.log -n 30'
-
-# ----- Deprecated -----
-alias reset_clock='invoke-rc.d chrony restart'
-alias hard_reset_clock='/etc/init.d/chrony stop && sudo ntpdate 192.168.1.75 && /etc/init.d/chrony start'

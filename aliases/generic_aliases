@@ -1,0 +1,42 @@
+# ----- Current -----
+# Git
+alias gs='git status'
+alias gitchris='git config --global user.name chriswsuarez && git config --global user.email chriswsuarez@utexas.edu'
+alias gsu='git submodule update --init --recursive'
+
+# File navigation
+alias ..='cd ../../'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .5='cd ../../../../../'
+alias .6='cd ../../../../../../'
+
+# Sourcing and init bashrc
+alias sws='source ./devel/setup.bash'
+alias sis='source ./install/setup.bash'
+alias src_chris='source ~/chris_setup/aliases/chris_aliases'
+alias initrc_aliases="echo 'source ~/chris_setup/aliases/generic_aliases' >> ~/.bashrc" 
+
+# ROS
+alias killros='killall -9 roscore ; killall -9 rosmaster'
+
+# Catkin
+alias extend_melodic='catkin config --extend /opt/ros/melodic'
+alias extend_noetic='catkin config --extend /opt/ros/noetic'
+
+# Cuda
+alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export CD_LIBRARY_PATH="/usr/local/cuda-10.0/bin:$PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
+# alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
+
+# Generic ROS Networking
+alias localmaster='export ROS_MASTER_URI=http://localhost:11311 && export ROS_IP=127.0.0.1'
+alias wifimaster='WIP="$(ifconfig | grep -A 1 'w' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$WIP:11311 && export ROS_IP=$WIP'
+alias ethmaster='EIP="$(ifconfig | grep -A 1 'e' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$EIP:11311 && export ROS_IP=$EIP'
+alias brmaster='BIP="$(ifconfig | grep -A 1 'br' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$BIP:11311 && export ROS_IP=$BIP'
+alias tunmaster='TIP="$(ifconfig | grep -A 1 'tun' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$TIP:11311 && export ROS_IP=$TIP'
+
+# Hosts
+alias init_hosts="echo 'source ~/chris_setup/hosts/generic_hosts' >> ~/etc/hosts" 
+
+# ----- Deprecated -----
+alias reset_clock='invoke-rc.d chrony restart'
