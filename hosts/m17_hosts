@@ -2,6 +2,7 @@
 127.0.1.1	nrgadmin-Alienware-m17
 
 # Walrus network
+192.168.0.1	    walrus_router
 192.168.0.20	base_radio
 192.168.0.21	ob_radio
 192.168.0.40	walrus
@@ -13,8 +14,21 @@
 192.168.0.101	nuvo
 192.168.0.102	zotac
 192.168.0.128	ouster
+192.168.0.131	jackal
 192.168.0.222	duro1
 192.168.0.223	duro2
+
+# Jackal
+192.168.131.1	jackal_eth
+192.168.131.100 m17_jk
+
+# NRG Wifi
+192.168.1.1     nrg_router
+192.168.1.11	augre_db
+192.168.1.100	m17_nrg
+192.168.1.101	nuvo_nrg
+192.168.1.102	zotac_nrg
+192.168.1.131	jackal_nrg
 
 # VPN
 100.96.1.4	hifi_vpn
@@ -23,9 +37,14 @@
 100.96.1.8	nuvo_vpn
 100.96.1.34	xavier_vpn
 
-# Utexas wifi
-10.147.204.210	nuvo_ut
-10.147.198.63	m17_ut
+# Field Demo
+172.29.184.74	regal_field
+172.29.184.72	m17_field
+172.29.184.162	tablet_field
+172.29.184.161	holo_arl_field
+172.29.184.76	holo_nrg_field
+172.29.184.159	regal_mac_field
+172.29.184.73	jackal_field
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     ip6-localhost ip6-loopback

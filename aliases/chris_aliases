@@ -29,23 +29,43 @@ alias open_vpn='sudo openvpn --config ~/m17_dallas_tx.ovpn'
 
 # Cuda
 alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export CD_LIBRARY_PATH="/usr/local/cuda-10.0/bin:$PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
+# alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
 
 # NRG specific
 alias xaviermaster='export ROS_MASTER_URI=http://xavier:11311 && export ROS_IP=192.168.0.100'
 alias m17master='export ROS_MASTER_URI=http://192.168.0.100:11311 && export ROS_IP=192.168.0.100'
 alias localmaster='export ROS_MASTER_URI=http://localhost:11311 && export ROS_IP=127.0.0.1'
+alias m17vpnmaster='export ROS_MASTER_URI=http://m17_vpn:11311 && export ROS_IP=100.96.1.5'
+
+# Walrus
 alias nuvomaster='export ROS_MASTER_URI=http://nuvo:11311 && export ROS_IP=192.168.0.100'
 alias nuvovpnmaster='export ROS_MASTER_URI=http://nuvo_vpn:11311 && export ROS_IP=100.96.1.5'
 alias nuvoutmaster='export ROS_MASTER_URI=http://nuvo_ut:11311 && export ROS_IP=10.147.253.33'
-alias m17vpnmaster='export ROS_MASTER_URI=http://m17_vpn:11311 && export ROS_IP=100.96.1.5'
-
-alias sshxavier='ssh -X xavier@xavier'
-alias sshwalrus='ssh -X dsat@walrus'
-alias sshprowl='ssh -p 2401 traclabs@prowl'
+alias nuvonrgmaster='export ROS_MASTER_URI=http://nuvo_nrg:11311 && export ROS_IP=192.168.1.100'
 alias sshnuvo='ssh -X nrgadmin@nuvo'
 alias sshnuvovpn='ssh -X nrgadmin@nuvo_vpn'
 alias sshnuvout='ssh -X nrgadmin@nuvo_ut'
+alias sshnuvonrg='ssh -X nrgadmin@nuvo_nrg'
 alias sshzotac='ssh -X nrgadmin@zotac'
+alias sshzotacnrg='ssh -X nrgadmin@zotac_nrg'
+alias sshaugredb='ssh -X augre@augre_db'
+alias sshxavier='ssh -X xavier@xavier'
+alias sshwalrus='ssh -X dsat@walrus'
+alias sshprowl='ssh -p 2401 traclabs@prowl'
+
+# AFC Jackal
+alias sshjackal='ssh administrator@jackal'
+alias sshjackaleth='ssh administrator@jackal_eth'
+alias sshjackalut='ssh administrator@jackal_ut'
+alias sshjackalfield='ssh administrator@jackal_field'
+alias sshjackalvicon='ssh administrator@jackal_vicon'
+alias sshjackalnrg='ssh administrator@jackal_nrg'
+alias jackalfieldmaster='export ROS_MASTER_URI=http://jackal_field:11311 && export ROS_IP=172.29.184.72'
+alias jackalutmaster='export ROS_MASTER_URI=http://jackal_ut:11311 && export ROS_IP=10.152.8.82'
+alias jackalmaster='export ROS_MASTER_URI=http://jackal:11311 && export ROS_IP=192.168.0.100'
+alias jackalethmaster='export ROS_MASTER_URI=http://jackal_eth:11311 && export ROS_IP=192.168.131.100'
+alias jackalviconmaster='export ROS_MASTER_URI=http://jackal_vicon:11311 && export ROS_IP=192.168.1.219'
+alias jackalnrgmaster='export ROS_MASTER_URI=http://jackal_nrg:11311 && export ROS_IP=192.168.1.100'
 
 alias srw='source ~/walrus_ws/devel/setup.bash && export ROS_IP=192.168.0.100'
 alias srq='source ~/nrg_walrus_ws/devel/setup.bash && source ~/nrg_walrus_ws/src/walrus-nrg/walrus_segway/config/segway_config.bash && export ROS_IP=192.168.0.100'
@@ -61,12 +81,11 @@ alias chmodall='sudo chmod a+rw /dev/ttyACM0 && sudo chmod a+rw /dev/ttyACM1 && 
 
 alias phx_setup='xhost +si:localuser:root && cd ~/phoenix_ws/src/phoenix-r1 && catkin-docker run'
 alias save_phx_map='rosrun map_server map_saver map:=/walrus/point_cloud_cache/renderers/full_map'
+alias save_map='rosrun map_server map_saver map:=/walrus/gmap'
 
 alias segstop='sudo service segway-core stop'
 alias segstart='sudo service segway-core start'
 alias segchk='sudo tail /var/log/upstart/segway-core.log -n 30'
-
-alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
 
 # ----- Deprecated -----
 alias reset_clock='invoke-rc.d chrony restart'
