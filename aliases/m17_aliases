@@ -4,7 +4,7 @@ alias open_vpn='sudo openvpn --config ~/m17_dallas_tx.ovpn'
 # NRG specific
 alias xaviermaster='export ROS_MASTER_URI=http://xavier:11311 && export ROS_IP=192.168.0.100'
 alias m17master='export ROS_MASTER_URI=http://192.168.0.100:11311 && export ROS_IP=192.168.0.100'
-alias m17nrgmaster='export ROS_MASTER_URI=http://192.168.1.100:11311 && export ROS_IP=192.168.1.131'
+alias m17nrgmaster='export ROS_MASTER_URI=http://192.168.1.100:11311 && export ROS_IP=192.168.1.100'
 alias m17vpnmaster='export ROS_MASTER_URI=http://m17_vpn:11311 && export ROS_IP=100.96.1.5'
 
 # Walrus
