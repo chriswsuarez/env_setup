@@ -4,7 +4,7 @@ alias open_vpn='sudo openvpn --config ~/m17_dallas_tx.ovpn'
 # NRG specific
 alias xaviermaster='export ROS_MASTER_URI=http://xavier:11311 && export ROS_IP=192.168.0.100'
 alias m17master='export ROS_MASTER_URI=http://192.168.0.100:11311 && export ROS_IP=192.168.0.100'
-alias localmaster='export ROS_MASTER_URI=http://localhost:11311 && export ROS_IP=127.0.0.1'
+alias m17nrgmaster='export ROS_MASTER_URI=http://192.168.1.100:11311 && export ROS_IP=192.168.1.131'
 alias m17vpnmaster='export ROS_MASTER_URI=http://m17_vpn:11311 && export ROS_IP=100.96.1.5'
 
 # Walrus
@@ -12,24 +12,8 @@ alias nuvomaster='export ROS_MASTER_URI=http://nuvo:11311 && export ROS_IP=192.1
 alias nuvovpnmaster='export ROS_MASTER_URI=http://nuvo_vpn:11311 && export ROS_IP=100.96.1.5'
 alias nuvoutmaster='export ROS_MASTER_URI=http://nuvo_ut:11311 && export ROS_IP=10.147.253.33'
 alias nuvonrgmaster='export ROS_MASTER_URI=http://nuvo_nrg:11311 && export ROS_IP=192.168.1.100'
-alias sshnuvo='ssh -X nrgadmin@nuvo'
-alias sshnuvovpn='ssh -X nrgadmin@nuvo_vpn'
-alias sshnuvout='ssh -X nrgadmin@nuvo_ut'
-alias sshnuvonrg='ssh -X nrgadmin@nuvo_nrg'
-alias sshzotac='ssh -X nrgadmin@zotac'
-alias sshzotacnrg='ssh -X nrgadmin@zotac_nrg'
-alias sshaugredb='ssh -X augre@augre_db'
-alias sshxavier='ssh -X xavier@xavier'
-alias sshwalrus='ssh -X dsat@walrus'
-alias sshprowl='ssh -p 2401 traclabs@prowl'
 
 # AFC Jackal
-alias sshjackal='ssh administrator@jackal'
-alias sshjackaleth='ssh administrator@jackal_eth'
-alias sshjackalut='ssh administrator@jackal_ut'
-alias sshjackalfield='ssh administrator@jackal_field'
-alias sshjackalvicon='ssh administrator@jackal_vicon'
-alias sshjackalnrg='ssh administrator@jackal_nrg'
 alias jackalfieldmaster='export ROS_MASTER_URI=http://jackal_field:11311 && export ROS_IP=172.29.184.72'
 alias jackalutmaster='export ROS_MASTER_URI=http://jackal_ut:11311 && export ROS_IP=10.152.8.82'
 alias jackalmaster='export ROS_MASTER_URI=http://jackal:11311 && export ROS_IP=192.168.0.100'

@@ -38,5 +38,27 @@ alias tunmaster='TIP="$(ifconfig | grep -A 1 'tun' | tail -1 | cut -c 14- | cut 
 # Hosts
 alias init_hosts="echo 'source ~/chris_setup/hosts/generic_hosts' >> ~/etc/hosts" 
 
+# SSH
+alias sshm17='ssh -X nrgadmin@m17'
+alias sshm17nrg='ssh -X nrgadmin@m17_nrg'
+alias sshm17ut='ssh -X nrgadmin@m17_ut'
+alias sshm17vpn='ssh -X nrgadmin@m17_vpn'
+alias sshnuvo='ssh -X nrgadmin@nuvo'
+alias sshnuvovpn='ssh -X nrgadmin@nuvo_vpn'
+alias sshnuvout='ssh -X nrgadmin@nuvo_ut'
+alias sshnuvonrg='ssh -X nrgadmin@nuvo_nrg'
+alias sshzotac='ssh -X nrgadmin@zotac'
+alias sshzotacnrg='ssh -X nrgadmin@zotac_nrg'
+alias sshaugredb='ssh -X augre@augre_db'
+alias sshxavier='ssh -X xavier@xavier'
+alias sshwalrus='ssh -X dsat@walrus'
+alias sshprowl='ssh -p 2401 traclabs@prowl'
+alias sshjackal='ssh administrator@jackal'
+alias sshjackaleth='ssh administrator@jackal_eth'
+alias sshjackalut='ssh administrator@jackal_ut'
+alias sshjackalfield='ssh administrator@jackal_field'
+alias sshjackalvicon='ssh administrator@jackal_vicon'
+alias sshjackalnrg='ssh administrator@jackal_nrg'
+
 # ----- Deprecated -----
 alias reset_clock='invoke-rc.d chrony restart'
