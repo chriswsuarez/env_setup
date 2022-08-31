@@ -1,12 +1,15 @@
 # Git
 alias gitfabian='git config --global user.name FabianEP11 && git config --global user.email fabianparra@utexas.edu'
 
-# ROS Network
-alias m17master='export ROS_MASTER_URI=http://192.168.0.100:11311 && export ROS_IP=192.168.0.131'
-alias nuvomaster='export ROS_MASTER_URI=http://192.168.0.101:11311 && export ROS_IP=192.168.0.131'
+# Local Network
+alias m17master='export ROS_MASTER_URI=http://m17:11311 && export ROS_IP=192.168.0.131'
+alias nuvomaster='export ROS_MASTER_URI=http://nuvo:11311 && export ROS_IP=192.168.0.131'
+alias jackalmaster='export ROS_MASTER_URI=http://jackal:11311 && export ROS_IP=192.168.0.131'
 
-alias m17nrgmaster='export ROS_MASTER_URI=http://192.168.1.100:11311 && export ROS_IP=192.168.1.131'
-alias nuvonrgmaster='export ROS_MASTER_URI=http://192.168.1.101:11311 && export ROS_IP=192.168.1.131'
+# AugRE Network
+alias m17nrgmaster='export ROS_MASTER_URI=http://m17_nrg:11311 && export ROS_IP=192.168.11.131'
+alias nuvonrgmaster='export ROS_MASTER_URI=http://nuvo_nrg:11311 && export ROS_IP=192.168.11.131'
+alias jackalnrgmaster='export ROS_MASTER_URI=http://jackal_nrg:11311 && export ROS_IP=192.168.11.131'
 
 # Velodyne
 alias velodyne_connect="sudo ifconfig br0:1 192.168.1.100"

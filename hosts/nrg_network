@@ -1,7 +1,7 @@
 # NRG Network
-192.168.1.1     nrg_router
-192.168.1.11	augre_db
-192.168.1.100	m17_nrg
-192.168.1.101	nuvo_nrg
-192.168.1.102	zotac_nrg
-192.168.1.131	jackal_nrg
+192.168.11.1    nrg_router
+192.168.11.11	augre_db
+192.168.11.100	m17_nrg
+192.168.11.101	nuvo_nrg
+192.168.11.102	zotac_nrg
+192.168.11.131	jackal_nrg

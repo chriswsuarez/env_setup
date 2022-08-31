@@ -3,15 +3,15 @@ alias open_vpn='sudo openvpn --config ~/m17_dallas_tx.ovpn'
 
 # NRG specific
 alias xaviermaster='export ROS_MASTER_URI=http://xavier:11311 && export ROS_IP=192.168.0.100'
-alias m17master='export ROS_MASTER_URI=http://192.168.0.100:11311 && export ROS_IP=192.168.0.100'
-alias m17nrgmaster='export ROS_MASTER_URI=http://192.168.1.100:11311 && export ROS_IP=192.168.1.100'
+alias m17master='export ROS_MASTER_URI=http://m17:11311 && export ROS_IP=192.168.0.100'
+alias m17nrgmaster='export ROS_MASTER_URI=http://m17_nrg:11311 && export ROS_IP=192.168.11.100'
 alias m17vpnmaster='export ROS_MASTER_URI=http://m17_vpn:11311 && export ROS_IP=100.96.1.5'
 
 # Walrus
 alias nuvomaster='export ROS_MASTER_URI=http://nuvo:11311 && export ROS_IP=192.168.0.100'
 alias nuvovpnmaster='export ROS_MASTER_URI=http://nuvo_vpn:11311 && export ROS_IP=100.96.1.5'
 alias nuvoutmaster='export ROS_MASTER_URI=http://nuvo_ut:11311 && export ROS_IP=10.147.253.33'
-alias nuvonrgmaster='export ROS_MASTER_URI=http://nuvo_nrg:11311 && export ROS_IP=192.168.1.100'
+alias nuvonrgmaster='export ROS_MASTER_URI=http://nuvo_nrg:11311 && export ROS_IP=192.168.11.100'
 
 # AFC Jackal
 alias jackalfieldmaster='export ROS_MASTER_URI=http://jackal_field:11311 && export ROS_IP=172.29.184.72'
@@ -19,7 +19,7 @@ alias jackalutmaster='export ROS_MASTER_URI=http://jackal_ut:11311 && export ROS
 alias jackalmaster='export ROS_MASTER_URI=http://jackal:11311 && export ROS_IP=192.168.0.100'
 alias jackalethmaster='export ROS_MASTER_URI=http://jackal_eth:11311 && export ROS_IP=192.168.131.100'
 alias jackalviconmaster='export ROS_MASTER_URI=http://jackal_vicon:11311 && export ROS_IP=192.168.1.219'
-alias jackalnrgmaster='export ROS_MASTER_URI=http://jackal_nrg:11311 && export ROS_IP=192.168.1.100'
+alias jackalnrgmaster='export ROS_MASTER_URI=http://jackal_nrg:11311 && export ROS_IP=192.168.11.100'
 
 alias gps_init='sudo modprobe garmin_gps && gpsd -S 4000 /dev/sensors/garmin_gps'
 alias gpsd_init='gpsd -S 4000 /dev/sensors/garmin_gps'
@@ -28,4 +28,5 @@ alias gps_ros='rosrun gpsd_client gpsd_client _port:=4000'
 
 alias phx_setup='xhost +si:localuser:root && cd ~/phoenix_ws/src/phoenix-r1 && catkin-docker run'
 alias save_phx_map='rosrun map_server map_saver map:=/walrus/point_cloud_cache/renderers/full_map'
+alias save_phx_map_jackal='rosrun map_server map_saver map:=/jackal/point_cloud_cache/renderers/full_map'
 alias save_map='rosrun map_server map_saver map:=/walrus/gmap'

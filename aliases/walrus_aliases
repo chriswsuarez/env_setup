@@ -2,13 +2,20 @@
 alias src_walrus='export SEGWAY_IP_ADDRESS=192.168.0.40 && export SEGWAY_IP_PORT_NUM=8080'
 alias initrc_walrus="echo 'export SEGWAY_IP_ADDRESS=192.168.0.40' >> ~/.bashrc && echo 'export SEGWAY_IP_PORT_NUM=8080' >> ~/.bashrc"
 
-alias xaviermaster='export ROS_MASTER_URI=http://xavier:11311 && export ROS_IP=192.168.0.100'
+# Local Network
+alias xaviermaster='export ROS_MASTER_URI=http://xavier:11311 && export ROS_IP=192.168.0.101'
 alias m17master='export ROS_MASTER_URI=http://192.168.0.100:11311 && export ROS_IP=192.168.0.101'
-alias m17nrgmaster='export ROS_MASTER_URI=http://192.168.1.100:11311 && export ROS_IP=192.168.1.101'
 alias nuvomaster='export ROS_MASTER_URI=http://nuvo:11311 && export ROS_IP=192.168.0.101'
+
+# AugRE Network
+alias m17nrgmaster='export ROS_MASTER_URI=http://192.168.1.100:11311 && export ROS_IP=192.168.11.101'
+alias nuvonrgmaster='export ROS_MASTER_URI=http://nuvo_nrg:11311 && export ROS_IP=192.168.11.101'
+alias jackalnrgmaster='export ROS_MASTER_URI=http://jackal_nrg:11311 && export ROS_IP=192.168.11.101'
+
+# Other Networks
 alias nuvovpnmaster='export ROS_MASTER_URI=http://nuvo_vpn:11311 && export ROS_IP=100.96.1.38'
 alias nuvoutmaster='export ROS_MASTER_URI=http://nuvo_ut:11311 && export ROS_IP=10.147.204.210'
-alias nuvonrgmaster='export ROS_MASTER_URI=http://nuvo_nrg:11311 && export ROS_IP=192.168.1.101'
+
 
 alias prowl_route='sudo route add -net 192.168.0.0 netmask 255.255.255.0 gw 192.168.2.148'
 
