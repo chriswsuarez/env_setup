@@ -31,9 +31,9 @@ alias cuda11='export CUDA_HOME="/usr/local/cuda-11.1" && export CD_LIBRARY_PATH=
 
 # Generic ROS Networking
 alias localmaster='export ROS_MASTER_URI=http://localhost:11311 && export ROS_IP=127.0.0.1'
-alias wifimaster='WIP="$(ifconfig | grep -A 1 'w' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$WIP:11311 && export ROS_IP=$WIP'
-alias ethmaster='EIP="$(ifconfig | grep -A 1 'e' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$EIP:11311 && export ROS_IP=$EIP'
-alias brmaster='BIP="$(ifconfig | grep -A 1 'br' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$BIP:11311 && export ROS_IP=$BIP'
+alias wifimaster='WIP="$(ifconfig | grep -A 1 'wl' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$WIP:11311 && export ROS_IP=$WIP'
+alias ethmaster='EIP="$(ifconfig | grep -A 1 'enp' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$EIP:11311 && export ROS_IP=$EIP'
+alias brmaster='BIP="$(ifconfig | grep -A 1 'br0' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$BIP:11311 && export ROS_IP=$BIP'
 alias tunmaster='TIP="$(ifconfig | grep -A 1 'tun' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$TIP:11311 && export ROS_IP=$TIP'
 
 # Hosts
