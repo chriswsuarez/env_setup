@@ -37,7 +37,10 @@ alias brmaster='BIP="$(ifconfig | grep -A 1 'br0' | tail -1 | cut -c 14- | cut -
 alias tunmaster='TIP="$(ifconfig | grep -A 1 'tun' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$TIP:11311 && export ROS_IP=$TIP'
 
 # Hosts
-alias init_hosts="echo 'source ~/chris_setup/hosts/generic_hosts' >> ~/etc/hosts" 
+alias init_hosts="echo 'source ~/chris_setup/hosts/generic_hosts' >> ~/etc/hosts"
+
+# Phoenix Docker
+alias phxdocker="xhost +si:localuser:root && catkin-docker run"
 
 # SSH
 alias sshm17='ssh -X nrgadmin@m17'
