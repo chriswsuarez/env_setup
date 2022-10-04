@@ -14,6 +14,7 @@ alias .6='cd ../../../../../../'
 # Sourcing and init bashrc
 alias sws='source ./devel/setup.bash'
 alias sis='source ./install/setup.bash'
+alias sds='source ./docker-build/install/setup.bash'
 alias src_chris='source ~/chris_setup/aliases/chris_aliases'
 alias initrc_aliases="echo 'source ~/chris_setup/aliases/generic_aliases' >> ~/.bashrc" 
 
