@@ -15,7 +15,7 @@ alias jackalnrgmaster='export ROS_MASTER_URI=http://jackal_nrg:11311 && export R
 alias velodyne_connect="sudo ifconfig br0:1 192.168.1.100"
 
 # Bluetooth PS4 Controller
-alias bluetooth_reconnect="bluetoothctl trust 90:89:5F:6D:55:64 && bluetoothctl disconnect 90:89:5F:6D:55:64 && bluetoothctl connect 90:89:5F:6D:55:64 && bluetoothctl trust 90:89:5F:6D:55:64"
+alias ps4_reconnect="bluetoothctl trust 90:89:5F:6D:55:64 && bluetoothctl disconnect 90:89:5F:6D:55:64 && bluetoothctl connect 90:89:5F:6D:55:64 && bluetoothctl trust 90:89:5F:6D:55:64"
 
 # Temoto
 alias stemoto='source ~/jackal_temoto/devel/setup.bash'
