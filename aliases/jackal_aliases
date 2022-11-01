@@ -11,6 +11,9 @@ alias m17nrgmaster='export ROS_MASTER_URI=http://m17_nrg:11311 && export ROS_IP=
 alias nuvonrgmaster='export ROS_MASTER_URI=http://nuvo_nrg:11311 && export ROS_IP=192.168.11.131'
 alias jackalnrgmaster='export ROS_MASTER_URI=http://jackal_nrg:11311 && export ROS_IP=192.168.11.131'
 
+# CDU Uav Network
+alias cdumaster='export ROS_MASTER_URI=http://192.168.1.101:11311 && export ROS_IP=192.168.1.236'
+
 # Velodyne
 alias velodyne_connect="sudo ifconfig br0:1 192.168.1.100"
 
