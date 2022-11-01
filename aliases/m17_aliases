@@ -30,3 +30,6 @@ alias phx_setup='xhost +si:localuser:root && cd ~/phoenix_ws/src/phoenix-r1 && c
 alias save_phx_map='rosrun map_server map_saver map:=/walrus/point_cloud_cache/renderers/full_map'
 alias save_phx_map_jackal='rosrun map_server map_saver map:=/jackal/point_cloud_cache/renderers/full_map'
 alias save_map='rosrun map_server map_saver map:=/walrus/gmap'
+
+# CDU Uav Network
+alias cdumaster='export ROS_MASTER_URI=http://192.168.1.101:11311 && export ROS_IP=192.168.1.100'

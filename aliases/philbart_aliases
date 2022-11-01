@@ -1,0 +1,28 @@
+# Git
+alias gitfabian='git config --global user.name FabianEP11 && git config --global user.email fabianparra@utexas.edu'
+
+# Local Network
+alias m17master='export ROS_MASTER_URI=http://m17:11311 && export ROS_IP=192.168.0.141'
+alias nuvomaster='export ROS_MASTER_URI=http://nuvo:11311 && export ROS_IP=192.168.0.141'
+alias jackalmaster='export ROS_MASTER_URI=http://jackal:11311 && export ROS_IP=192.168.0.141'
+alias philbartmaster='export ROS_MASTER_URI=http://philbart:11311 && export ROS_IP=192.168.0.141'
+
+# AugRE Network
+alias m17nrgmaster='export ROS_MASTER_URI=http://m17_nrg:11311 && export ROS_IP=192.168.11.141'
+alias nuvonrgmaster='export ROS_MASTER_URI=http://nuvo_nrg:11311 && export ROS_IP=192.168.11.141'
+alias jackalnrgmaster='export ROS_MASTER_URI=http://jackal_nrg:11311 && export ROS_IP=192.168.11.141'
+alias philbartnrgmaster='export ROS_MASTER_URI=http://philbart_nrg:11311 && export ROS_IP=192.168.11.141'
+
+# CDU Uav Network
+alias cdumaster='export ROS_MASTER_URI=http://192.168.1.101:11311 && export ROS_IP=192.168.1.236'
+
+# Cuda
+alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export CD_LIBRARY_PATH="/usr/local/cuda-10.0/bin:$PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
+
+# OpenVPN
+alias startvpn='openvpn3 session-start --config ~/Jackal_blake@ut-nrg.openvpn.com_[Dallas_TX].ovpn'
+alias stopvpn='openvpn3 session-manage --disconnect --config ~/Jackal_blake@ut-nrg.openvpn.com_[Dallas_TX].ovpn'
+
+# Clock
+alias reset_clock_walrus='/etc/init.d/chrony stop && sudo ntpdate 192.168.0.101 && /etc/init.d/chrony start'
+alias reset_clock_nrg='/etc/init.d/chrony stop && sudo ntpdate 192.168.11.101 && /etc/init.d/chrony start'

@@ -22,13 +22,19 @@
 192.168.131.1	jackal_eth
 192.168.131.100 m17_jk
 
-# NRG Wifi
-192.168.11.1    nrg_router
+# NRG Network
+192.168.11.1	nrg_router
 192.168.11.11	augre_db
+192.168.11.20	hololens_nrg
+192.168.11.21	hololens_arl1
+192.168.11.22	hololens_arl2
 192.168.11.100	m17_nrg
 192.168.11.101	nuvo_nrg
 192.168.11.102	zotac_nrg
 192.168.11.131	jackal_nrg
+192.168.11.141  philbart_nrg
+192.168.11.150	spot_nrg
+192.168.11.151	spot_core_nrg
 
 # VPN
 100.96.1.4	hifi_vpn
