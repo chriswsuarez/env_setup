@@ -11,6 +11,7 @@ alias nuvomaster='export ROS_MASTER_URI=http://nuvo:11311 && export ROS_IP=192.1
 alias m17nrgmaster='export ROS_MASTER_URI=http://192.168.1.100:11311 && export ROS_IP=192.168.11.101'
 alias nuvonrgmaster='export ROS_MASTER_URI=http://nuvo_nrg:11311 && export ROS_IP=192.168.11.101'
 alias jackalnrgmaster='export ROS_MASTER_URI=http://jackal_nrg:11311 && export ROS_IP=192.168.11.101'
+alias philbartnrgmaster='export ROS_MASTER_URI=http://philbart_nrg:11311 && export ROS_IP=192.168.11.101'
 
 # Other Networks
 alias nuvovpnmaster='export ROS_MASTER_URI=http://nuvo_vpn:11311 && export ROS_IP=100.96.1.38'

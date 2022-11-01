@@ -64,6 +64,12 @@ alias sshjackalut='ssh -X nrgadmin@jackal_ut'
 alias sshjackalfield='ssh -X nrgadmin@jackal_field'
 alias sshjackalvicon='ssh -X nrgadmin@jackal_vicon'
 alias sshjackalnrg='ssh -X nrgadmin@jackal_nrg'
+alias sshphilbart='ssh -X nrgadmin@philbart'
+alias sshphilbarteth='ssh -X nrgadmin@philbart_eth'
+alias sshphilbartut='ssh -X nrgadmin@phibart_ut'
+alias sshphilbartfield='ssh -X nrgadmin@philbart_field'
+alias sshphilbartvicon='ssh -X nrgadmin@philbart_vicon'
+alias sshphilbartnrg='ssh -X nrgadmin@philbart_nrg'
 
 # ----- Deprecated -----
 alias reset_clock='invoke-rc.d chrony restart'
