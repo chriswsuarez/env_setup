@@ -26,3 +26,8 @@ alias stopvpn='openvpn3 session-manage --disconnect --config ~/Jackal_blake@ut-n
 # Clock
 alias reset_clock_walrus='/etc/init.d/chrony stop && sudo ntpdate 192.168.0.101 && /etc/init.d/chrony start'
 alias reset_clock_nrg='/etc/init.d/chrony stop && sudo ntpdate 192.168.11.101 && /etc/init.d/chrony start'
+
+# Demo launches
+alias phxphilbart='phxlaunch phoenix_launch philbart.xlaunch'
+alias agrephilbart='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true' 
+
