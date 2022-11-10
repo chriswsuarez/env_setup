@@ -19,15 +19,16 @@ alias cdumaster='export ROS_MASTER_URI=http://192.168.1.101:11311 && export ROS_
 # Cuda
 alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export CD_LIBRARY_PATH="/usr/local/cuda-10.0/bin:$PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
 
-# OpenVPN
-alias startvpn='openvpn3 session-start --config ~/Jackal_blake@ut-nrg.openvpn.com_[Dallas_TX].ovpn'
-alias stopvpn='openvpn3 session-manage --disconnect --config ~/Jackal_blake@ut-nrg.openvpn.com_[Dallas_TX].ovpn'
-
 # Clock
 alias reset_clock_walrus='/etc/init.d/chrony stop && sudo ntpdate 192.168.0.101 && /etc/init.d/chrony start'
 alias reset_clock_nrg='/etc/init.d/chrony stop && sudo ntpdate 192.168.11.101 && /etc/init.d/chrony start'
 
 # Demo launches
-alias phxphilbart='phxlaunch phoenix_launch philbart.xlaunch'
-alias agrephilbart='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true' 
-
+alias phoenix='phxlaunch phoenix_launch philbart.xlaunch'
+alias augre='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true'
+alias augreo='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true enable_detection:=true'
+alias augred='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true enable_detection:=true enable_retinanet:=true'
+alias augrer='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true enable_detection:=true enable_retinanet:=true'
+alias objdet='roslaunch object_detection object_detection.launch robot:=philbart'
+alias objdetd='roslaunch object_detection object_detection.launch robot:=philbart enable_darknet:=true'
+alias objdetr='roslaunch object_detection object_detection.launch robot:=philbart enable_retinanet:=true'
