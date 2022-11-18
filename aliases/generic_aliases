@@ -22,6 +22,8 @@ alias initrc_aliases="echo 'source ~/chris_setup/aliases/generic_aliases' >> ~/.
 alias killros='killall -9 roscore ; killall -9 rosmaster'
 
 # Catkin
+alias cb='catkin build'
+alias cbr='catkin build -DCMAKE_BUILD_TYPE=Release'
 alias extend_melodic='catkin config --extend /opt/ros/melodic'
 alias extend_noetic='catkin config --extend /opt/ros/noetic'
 
