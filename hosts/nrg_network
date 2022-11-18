@@ -1,9 +1,11 @@
 # NRG Network
 192.168.11.1	nrg_router
 192.168.11.11	augre_db
-192.168.11.20	hololens_nrg
 192.168.11.21	hololens_arl1
 192.168.11.22	hololens_arl2
+192.168.11.31	hololens_nrg1
+192.168.11.32	hololens_nrg2
+192.168.11.33	hololens_nrg3
 192.168.11.100	m17_nrg
 192.168.11.101	nuvo_nrg
 192.168.11.102	zotac_nrg
