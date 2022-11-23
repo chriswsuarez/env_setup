@@ -15,19 +15,21 @@ alias nuvonrgmaster='export ROS_MASTER_URI=http://nuvo_nrg:11311 && export ROS_I
 
 # AFC Jackal
 alias jackalfieldmaster='export ROS_MASTER_URI=http://jackal_field:11311 && export ROS_IP=172.29.184.72'
-alias jackalutmaster='export ROS_MASTER_URI=http://jackal_ut:11311 && export ROS_IP=10.152.8.82'
+alias jackalutmaster='export ROS_MASTER_URI=http://jackal_ut:11311 && export ROS_IP=ec5c68e32d03.dynamic.utexas.edu'
 alias jackalmaster='export ROS_MASTER_URI=http://jackal:11311 && export ROS_IP=192.168.0.100'
 alias jackalethmaster='export ROS_MASTER_URI=http://jackal_eth:11311 && export ROS_IP=192.168.131.100'
-alias jackalviconmaster='export ROS_MASTER_URI=http://jackal_vicon:11311 && export ROS_IP=192.168.1.219'
 alias jackalnrgmaster='export ROS_MASTER_URI=http://jackal_nrg:11311 && export ROS_IP=192.168.11.100'
 
 # AFC Philbart
 alias philbartfieldmaster='export ROS_MASTER_URI=http://philbart_field:11311 && export ROS_IP=172.29.184.72'
-alias philbartutmaster='export ROS_MASTER_URI=http://philbart_ut:11311 && export ROS_IP=10.152.8.82'
+alias philbartutmaster='export ROS_MASTER_URI=http://philbart_ut:11311 && export ROS_IP=ec5c68e32d03.dynamic.utexas.edu'
 alias philbartmaster='export ROS_MASTER_URI=http://philbart:11311 && export ROS_IP=192.168.0.100'
 alias philbartethmaster='export ROS_MASTER_URI=http://philbart_eth:11311 && export ROS_IP=192.168.131.100'
-alias philbartviconmaster='export ROS_MASTER_URI=http://philbart_vicon:11311 && export ROS_IP=192.168.1.219'
 alias philbartnrgmaster='export ROS_MASTER_URI=http://philbart_nrg:11311 && export ROS_IP=192.168.11.100'
+
+# AFC Philbart
+alias vaultbotutmaster='export ROS_MASTER_URI=http://vaultbot_ut:11311 && export ROS_IP=ec5c68e32d03.dynamic.utexas.edu'
+alias vaultbotnrgmaster='export ROS_MASTER_URI=http://vaultbot_nrg:11311 && export ROS_IP=192.168.11.100'
 
 alias gps_init='sudo modprobe garmin_gps && gpsd -S 4000 /dev/sensors/garmin_gps'
 alias gpsd_init='gpsd -S 4000 /dev/sensors/garmin_gps'
