@@ -20,8 +20,16 @@ alias initrc_aliases="echo 'source ~/chris_setup/aliases/generic_aliases' >> ~/.
 
 # ROS
 alias killros='killall -9 roscore ; killall -9 rosmaster'
-alias rng='rosnode list | grep'
-alias rtg='rostopic list | grep'
+alias rnl='rosnode list'
+alias rni='rosnode info'
+alias rnlg='rosnode list | grep'
+alias rtl='rostopic list'
+alias rti='rostopic info'
+alias rtlg='rostopic list | grep'
+alias rpl='rosparam list'
+alias rplg='rosparam list | grep'
+alias rpg='rosparam get'
+alias rps='rosparam set'
 
 # Catkin
 alias cb='catkin build'
