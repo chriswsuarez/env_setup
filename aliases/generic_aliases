@@ -34,6 +34,8 @@ alias rps='rosparam set'
 # Catkin
 alias cb='catkin build'
 alias cbr='catkin build -DCMAKE_BUILD_TYPE=Release'
+alias cbd='catkin build -DCMAKE_BUILD_TYPE=Debug'
+alias cbrd='catkin build -DCMAKE_BUILD_TYPE=RelWithDebInfo'
 alias extend_melodic='catkin config --extend /opt/ros/melodic'
 alias extend_noetic='catkin config --extend /opt/ros/noetic'
 
