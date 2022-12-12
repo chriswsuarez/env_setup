@@ -2,10 +2,7 @@
 alias gitfabian='git config --global user.name FabianEP11 && git config --global user.email fabianparra@utexas.edu'
 
 # Local Network
-alias m17master='export ROS_MASTER_URI=http://m17:11311 && export ROS_IP=192.168.0.131'
-alias nuvomaster='export ROS_MASTER_URI=http://nuvo:11311 && export ROS_IP=192.168.0.131'
-alias jackalmaster='export ROS_MASTER_URI=http://jackal:11311 && export ROS_IP=192.168.0.131'
-alias philbartmaster='export ROS_MASTER_URI=http://philbart:11311 && export ROS_IP=192.168.0.131'
+alias jackalmaster='export ROS_MASTER_URI=http://jackal:11311 && export ROS_IP=192.168.131.1'
 
 # AugRE Network
 alias m17nrgmaster='export ROS_MASTER_URI=http://m17_nrg:11311 && export ROS_IP=192.168.11.131'
