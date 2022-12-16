@@ -34,3 +34,8 @@ alias augrer='roslaunch afc_demos full_demo.launch robot:=philbart use_database:
 alias objdet='roslaunch object_detection object_detection.launch robot:=philbart'
 alias objdetd='roslaunch object_detection object_detection.launch robot:=philbart enable_darknet:=true'
 alias objdetr='roslaunch object_detection object_detection.launch robot:=philbart enable_retinanet:=true'
+
+# NAT
+alias nattt='sudo iptables -t nat -A POSTROUTING -o wlp16s0 -j MASQUERADE && sudo iptables -A FORWARD -i br0 -o wlp16s0 -j ACCEPT && sudo iptables -A FORWARD -i wlp16s0 -o br0 -m state --state RELATED,ESTABLISHED -j ACCEPT'
+# alias naddd='sudo iptables -t nat -A POSTROUTING -o br0 -j MASQUERADE && sudo iptables -A FORWARD -i wlp16s0 -o br0 -m state --state RELATED,ESTABLISHED -j ACCEPT'
+alias nawww='sudo iptables -A FORWARD -i wlp16s0 -o br0 -m state --state RELATED,ESTABLISHED -j ACCEPT'
