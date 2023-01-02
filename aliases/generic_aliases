@@ -10,8 +10,14 @@ alias gitchris='git config --global user.name chriswsuarez && git config --globa
 alias ..='cd ../../'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
+alias .....='cd ../../../../../'
+alias ......='cd ../../../../../../'
+alias .......='cd ../../../../../../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
 alias .6='cd ../../../../../../'
+alias .7='cd ../../../../../../../'
 
 # Sourcing and init bashrc
 alias sws='source ./devel/setup.bash'
