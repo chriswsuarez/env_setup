@@ -1,8 +1,10 @@
 # ----- Current -----
 # Git
 alias gs='git status'
-alias gitchris='git config --global user.name chriswsuarez && git config --global user.email chriswsuarez@utexas.edu'
 alias gsu='git submodule update --init --recursive'
+alias gcl='git clone'
+alias gclr='git clone --recursive'
+alias gitchris='git config --global user.name chriswsuarez && git config --global user.email chriswsuarez@utexas.edu'
 
 # File navigation
 alias ..='cd ../../'
