@@ -2,6 +2,7 @@
 # Git
 alias pull='git pull'
 alias status='git status'
+alias push='git push'
 alias clone='git clone --recursive'
 alias gsu='git submodule update --init --recursive'
 alias gitchris='git config --global user.name chriswsuarez && git config --global user.email chriswsuarez@utexas.edu'
