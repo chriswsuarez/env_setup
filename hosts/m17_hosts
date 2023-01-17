@@ -20,7 +20,7 @@
 
 # Jackal
 192.168.131.1	jackal_eth
-192.168.131.100 m17_jk
+192.168.131.100 m17_jackal
 
 # NRG Network
 192.168.11.1	nrg_router
