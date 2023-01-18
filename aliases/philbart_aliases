@@ -1,5 +1,6 @@
 # Git
 alias gitfabian='git config --global user.name FabianEP11 && git config --global user.email fabianparra@utexas.edu'
+alias gitjohn='git config --global user.name roboav8r && git config --global user.email john.a.duncan@utexas.edu'
 
 # Local Network
 alias m17master='export ROS_MASTER_URI=http://m17:11311 && export ROS_IP=192.168.0.141'
