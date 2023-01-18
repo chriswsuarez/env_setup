@@ -48,3 +48,6 @@ alias augrer='roslaunch afc_demos full_demo.launch robot:=jackal use_database:=t
 alias objdet='roslaunch object_detection object_detection.launch robot:=jackal'
 alias objdetd='roslaunch object_detection object_detection.launch robot:=jackal enable_darknet:=true'
 alias objdetr='roslaunch object_detection object_detection.launch robot:=jackal enable_retinanet:=true'
+
+# Demo calls
+alias resetna='rosservice call /jackal/robot_asa_node/reset_nearest_anchor "{}"'
