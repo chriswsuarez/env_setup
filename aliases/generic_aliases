@@ -54,7 +54,8 @@ alias extend_noetic='catkin config --extend /opt/ros/noetic'
 
 # Cuda
 alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export CD_LIBRARY_PATH="/usr/local/cuda-10.0/bin:$PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
-alias cuda11='export CUDA_HOME="/usr/local/cuda-11.1" && export CD_LIBRARY_PATH="/usr/local/cuda-11.1/bin:$PATH" && export PATH="/usr/local/cuda-11.1/bin:$PATH"'
+alias cuda111='export CUDA_HOME="/usr/local/cuda-11.1" && export CD_LIBRARY_PATH="/usr/local/cuda-11.1/bin:$PATH" && export PATH="/usr/local/cuda-11.1/bin:$PATH"'
+alias cuda113='export CUDA_HOME="/usr/local/cuda-11.3" && export CD_LIBRARY_PATH="/usr/local/cuda-11.3/bin:$PATH" && export PATH="/usr/local/cuda-11.3/bin:$PATH"'
 alias cuda12='export CUDA_HOME="/usr/local/cuda-12.0" && export CD_LIBRARY_PATH="/usr/local/cuda-12.0/bin:$PATH" && export PATH="/usr/local/cuda-12.0/bin:$PATH"'
 # alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
 
