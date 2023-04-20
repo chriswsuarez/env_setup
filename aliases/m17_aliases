@@ -48,7 +48,8 @@ alias cdumaster='export ROS_MASTER_URI=http://192.168.1.101:11311 && export ROS_
 
 # AugRE Specific
 alias robofleet_server='cd ~/robofleet/robofleet_server && yarn start'
-alias augre_db='cd ~/postgrest && postgrest augre_api.conf' 
+alias augre_db_server='cd ~/postgrest && postgrest augre_api.conf'
+alias augre_img_server='cd ~/augre_images && python3 -m http.server 4002'
 
 # Window WSL commands
 alias cdwsldev='cd /mnt/c/Users/nrgadmin/Development'
