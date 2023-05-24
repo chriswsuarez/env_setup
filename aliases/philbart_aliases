@@ -32,9 +32,9 @@ alias augreo='roslaunch afc_demos full_demo.launch robot:=philbart use_database:
 alias augrec='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true enable_detection:=true enable_cot:=true'
 alias augred='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true enable_detection:=true enable_darknet:=true'
 alias augrer='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true enable_detection:=true enable_retinanet:=true'
-alias objdet='roslaunch object_detection object_detection.launch robot:=philbart'
-alias objdetd='roslaunch object_detection object_detection.launch robot:=philbart enable_darknet:=true'
-alias objdetr='roslaunch object_detection object_detection.launch robot:=philbart enable_retinanet:=true'
+alias objdet='roslaunch afc_demos object_detection.launch robot:=philbart'
+alias objdetd='roslaunch afc_demos object_detection.launch robot:=philbart enable_darknet:=true'
+alias objdetr='roslaunch afc_demos object_detection.launch robot:=philbart enable_retinanet:=true'
 
 # Demo calls
 alias resetna='rosservice call /philbart/robot_asa_node/reset_nearest_anchor "{}"'
