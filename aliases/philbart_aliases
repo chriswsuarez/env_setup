@@ -27,14 +27,8 @@ alias reset_clock_augre='/etc/init.d/chrony stop && sudo ntpdate 192.168.11.101 
 
 # Demo launches
 alias phoenix='phxlaunch phoenix_launch philbart.xlaunch'
-alias augre='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true'
-alias augreo='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true enable_detection:=true'
-alias augrec='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true enable_detection:=true enable_cot:=true'
-alias augred='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true enable_detection:=true enable_darknet:=true'
-alias augrer='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true enable_detection:=true enable_retinanet:=true'
+alias augre='roslaunch afc_demos full_demo.launch robot:=philbart use_database:=true enable_detection:=true'
 alias objdet='roslaunch afc_demos object_detection.launch robot:=philbart'
-alias objdetd='roslaunch afc_demos object_detection.launch robot:=philbart enable_darknet:=true'
-alias objdetr='roslaunch afc_demos object_detection.launch robot:=philbart enable_retinanet:=true'
 alias oakd_converion='roslaunch oakd_camera darknet_conversion.launch robot:=philbart'
 
 # Demo calls
