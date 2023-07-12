@@ -24,7 +24,7 @@ git config --global user.name "chriswsuarez"
 git config --global user.email "chriswsuarez@utexas.edu"
 
 # Visual Studio code
-sudo snap install --classic code
+sudo snap install code --classic
 
 # Sublime 
 sudo snap install sublime-text --classic
