@@ -2,9 +2,9 @@
 
 types=$(cat /sys/class/thermal/thermal_zone*/type)
 temps=$(cat /sys/class/thermal/thermal_zone*/temp)
-num=$(echo $temps | tr -cd ' ' | wc -c)
+num_zones=$(echo $temps | tr -cd ' ' | wc -c)
 
-for ((i=1; i<($num+1); i++)); do
+for ((i=1; i<($num_zones+1); i++)); do
     type=$(echo $types | cut -d " " -f $i)
     tempraw=$(echo $temps | cut -d " " -f $i)
     tempround="${tempraw:0:2}"
