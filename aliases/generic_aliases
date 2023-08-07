@@ -73,7 +73,7 @@ alias init_hosts="echo 'source ~/chris_setup/hosts/generic_hosts' >> ~/etc/hosts
 alias phxdocker="xhost +si:localuser:root && catkin-docker run"
 
 # SSH Keys
-alias removesshkey='f(){ sed '$1d' ~/.ssh/known_hosts; unset -f f; }; f'
+alias removesshkey='f(){ sed -i '$1d' ~/.ssh/known_hosts; unset -f f; }; f'
 
 # SSH
 alias sshkeygen='ssh-keygen -t rsa -b 4096'
