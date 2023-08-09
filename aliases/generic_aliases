@@ -52,6 +52,11 @@ alias cbrd='catkin build -DCMAKE_BUILD_TYPE=RelWithDebInfo'
 alias extend_melodic='catkin config --extend /opt/ros/melodic'
 alias extend_noetic='catkin config --extend /opt/ros/noetic'
 
+# apt Installs
+alias aptupdate='sudo apt update'
+alias aptupgrade='sudo apt upgrade -y'
+alias findapt='dpkg -l | grep'
+
 # Cuda
 alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export CD_LIBRARY_PATH="/usr/local/cuda-10.0/bin:$PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
 alias cuda111='export CUDA_HOME="/usr/local/cuda-11.1" && export CD_LIBRARY_PATH="/usr/local/cuda-11.1/bin:$PATH" && export PATH="/usr/local/cuda-11.1/bin:$PATH"'
