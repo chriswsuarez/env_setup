@@ -43,9 +43,6 @@ alias save_map='rosrun map_server map_saver map:=/walrus/gmap'
 alias teleophx_philbart='phxlaunch husky_control teleoperation_station.launch'
 alias teleophx_jackal='phxlaunch jackal_control jackal_operation_station.launch'
 
-# CDU Uav Network
-alias cdumaster='export ROS_MASTER_URI=http://192.168.1.101:11311 && export ROS_IP=192.168.1.100'
-
 # AugRE Specific
 alias robofleet_server='cd ~/robofleet/robofleet_server && yarn start'
 alias augre_db_server='cd ~/postgrest && postgrest augre_api.conf'
