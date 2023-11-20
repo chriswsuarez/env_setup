@@ -40,7 +40,7 @@ alias nawww='sudo iptables -A FORWARD -i wlp16s0 -o br0 -m state --state RELATED
 # Added for python3 virtual environment (needed in audio_ws for pocketsphinx recognition)
 alias py3venv='source ~/audio_ws/py3venv/bin/activate'
 
-alias samrl='export ROS_PACKAGE_PATH=/home/nrgadmin/hololens_ws/src/robofleet_client/amrl_msgs:$ROS_PACKAGE_PATH'
+alias samrl='export ROS_PACKAGE_PATH=/home/nrgadmin/afc_ws/src/robofleet_client/amrl_msgs:$ROS_PACKAGE_PATH'
 alias robofleet='ROS_NAMESPACE="2D_walrus" make run'
 
 # Added for Duncan's multimodal data recording 15 Sept 2021

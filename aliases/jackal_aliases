@@ -22,7 +22,7 @@ alias stemoto='source ~/jackal_temoto/devel/setup.bash'
 
 # Robotfleet
 alias robofleet='ROS_NAMESPACE="2D_jackalnrg" make run'
-alias samrl='export ROS_PACKAGE_PATH=/home/administrator/hololens_ws/src/robofleet_client/amrl_msgs:$ROS_PACKAGE_PATH'
+alias samrl='export ROS_PACKAGE_PATH=/home/administrator/afc_ws/src/robofleet_client/amrl_msgs:$ROS_PACKAGE_PATH'
 
 # Cuda
 alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export CD_LIBRARY_PATH="/usr/local/cuda-10.0/bin:$PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
