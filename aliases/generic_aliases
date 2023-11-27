@@ -53,12 +53,14 @@ alias extend_melodic='catkin config --extend /opt/ros/melodic'
 alias extend_noetic='catkin config --extend /opt/ros/noetic'
 
 # Docker
+alias dxhost='xhost +si:localuser:root'
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 alias dcb='docker compose build'
 alias dimg='docker image'
 alias dcnt='docker container'
 alias dload='docker load <'
+alias ros_docker='xhost +si:localuser:root && cd ~/chris_setup/docker/noetic-desktop/ && docker compose up -d && docker exec -ti noetic-desktop bash'
 alias augre_docker='cd ~/afc_ws/src/afc_demos/docker/augre/ && docker compose up -d && docker exec -ti augre bash'
 alias object_detection_docker='cd ~/afc_ws/src/afc_demos/docker/object_detection/ && docker compose up -d && docker exec -ti object_detection bash'
 

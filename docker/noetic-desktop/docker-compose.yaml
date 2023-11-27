@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  noetic-desktop:
+    image: noetic-desktop
+    container_name: noetic-desktop
+    build:
+      context: ./../../..
+      dockerfile: chris_setup/docker/noetic-desktop/Dockerfile
+    network_mode: host
+    volumes:
+      - ${HOME}/chris_setup:/root/chris_setup
+      - ${HOME}/afc_ws:/root/afc_ws
+      # mount host directories to the container for persistent storage
+      - ../projects:/root/projects
+      # mount the X11 socket to enable graphics display
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # required for non-nvidia users, comment out for nvidia users
+      - /dev/dri:/dev/dri
+      # add the .Xauthority file to use ssh X11 forwarding
+      - ${HOME}/.Xauthority:/root/.Xauthority:rw
+    stdin_open: true
+    tty: true
+    environment:
+      # pass the display variable to the container
+      - DISPLAY=${DISPLAY}
+      # enable NVIDIA GPU access inside the container
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - NVIDIA_VISIBLE_DEVICES=all
+      # disable qt-X11 memory sharing for RViz
+      - QT_X11_NO_MITSHM=1
+    security_opt:
+      # this is set bc of errors with RViz being denied dbus comm w/ host
+      - apparmor:unconfined
