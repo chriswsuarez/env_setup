@@ -11,8 +11,6 @@ services:
     volumes:
       - ${HOME}/chris_setup:/root/chris_setup
       - ${HOME}/afc_ws:/root/afc_ws
-      # mount host directories to the container for persistent storage
-      - ../projects:/root/projects
       # mount the X11 socket to enable graphics display
       - /tmp/.X11-unix:/tmp/.X11-unix
       # required for non-nvidia users, comment out for nvidia users

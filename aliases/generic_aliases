@@ -1,10 +1,5 @@
 # ----- Current -----
 # Git
-alias pull='git pull'
-alias status='git status'
-alias push='git push'
-alias clone='git clone --recursive'
-alias gsu='git submodule update --init --recursive'
 alias gitchris='git config --global user.name chriswsuarez && git config --global user.email chriswsuarez@utexas.edu'
 
 # VCS
@@ -43,6 +38,33 @@ alias rpl='rosparam list'
 alias rplg='rosparam list | grep'
 alias rpg='rosparam get'
 alias rps='rosparam set'
+alias rosenv='printenv | grep -i ROS'
+function unsource_ros () {
+    # ROS common
+    unset ROS_VERSION
+    unset ROS_PYTHON_VERSION
+    unset ROS_DISTRO
+    unset PYTHONPATH
+    unset LD_LIBRARY_PATH
+    # Unser how to deal with PATH
+
+    # ROS 1
+    unset ROS_PACKAGE_PATH
+    unset ROSLISP_PACKAGE_DIRECTORIES
+    unset ROS_ETC_DIR
+    unset ROS_MASTER_URI
+    unset ROS_ROOT
+    unset CMAKE_PREFIX_PATH
+    unset PKG_CONFIG_PATH
+    unset ROS_LOCATIONS
+    unset ROS_HOSTNAME
+    unset ROS_NAMESPACE
+
+    # ROS 2
+    unset AMENT_PREFIX_PATH
+    unset ROS_LOCALHOST_ONLY
+    unset ROS_DOMAIN_ID
+}
 
 # Catkin
 alias cb='catkin build'
@@ -64,24 +86,29 @@ alias ros_docker='xhost +si:localuser:root && cd ~/chris_setup/docker/noetic-des
 alias augre_docker='cd ~/afc_ws/src/afc_demos/docker/augre/ && docker compose up -d && docker exec -ti augre bash'
 alias object_detection_docker='cd ~/afc_ws/src/afc_demos/docker/object_detection/ && docker compose up -d && docker exec -ti object_detection bash'
 
-# apt Installs
-alias aptupdate='sudo apt update'
-alias aptupgrade='sudo apt upgrade -y'
+# Pkgs
 alias grepdpkg='dpkg -l | grep'
 
 # Cuda
-alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export CD_LIBRARY_PATH="/usr/local/cuda-10.0/bin:$PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
-alias cuda111='export CUDA_HOME="/usr/local/cuda-11.1" && export CD_LIBRARY_PATH="/usr/local/cuda-11.1/bin:$PATH" && export PATH="/usr/local/cuda-11.1/bin:$PATH"'
-alias cuda113='export CUDA_HOME="/usr/local/cuda-11.3" && export CD_LIBRARY_PATH="/usr/local/cuda-11.3/bin:$PATH" && export PATH="/usr/local/cuda-11.3/bin:$PATH"'
-alias cuda12='export CUDA_HOME="/usr/local/cuda-12.0" && export CD_LIBRARY_PATH="/usr/local/cuda-12.0/bin:$PATH" && export PATH="/usr/local/cuda-12.0/bin:$PATH"'
-# alias cuda10='export CUDA_HOME="/usr/local/cuda-10.0" && export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH" && export PATH="/usr/local/cuda-10.0/bin:$PATH"'
+function cudaenv () {
+    export CUDA_HOME="/usr/local/cuda-$1"
+    export CD_LIBRARY_PATH="/usr/local/cuda-$1/bin:$PATH"
+    export PATH="/usr/local/cuda-$1/bin:$PATH"
+}
 
 # Generic ROS Networking
 alias localmaster='export ROS_MASTER_URI=http://localhost:11311 && export ROS_IP=127.0.0.1'
-alias wifimaster='WIP="$(ifconfig | grep -A 1 'wl' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$WIP:11311 && export ROS_IP=$WIP'
-alias ethmaster='EIP="$(ifconfig | grep -A 1 'enp' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$EIP:11311 && export ROS_IP=$EIP'
-alias brmaster='BIP="$(ifconfig | grep -A 1 'br0' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$BIP:11311 && export ROS_IP=$BIP'
-alias tunmaster='TIP="$(ifconfig | grep -A 1 'tun' | tail -1 | cut -c 14- | cut -d " " -f 1)" && export ROS_MASTER_URI=http://$TIP:11311 && export ROS_IP=$TIP'
+function rosip () {
+    ROSIP="$(ifconfig | grep -A 1 $1 | tail -1 | cut -c 14- | cut -d " " -f 1)"
+    export ROS_IP=$ROSIP
+}
+
+function rosmaster () {
+    ROSIP="$(ifconfig | grep -A 1 $1 | tail -1 | cut -c 14- | cut -d " " -f 1)"
+    export ROS_MASTER_URI=http://$ROSIP:11311
+    export ROS_IP=$ROSIP
+}
+
 
 # Hosts
 alias init_hosts="echo 'source ~/chris_setup/hosts/generic_hosts' >> ~/etc/hosts"
@@ -90,7 +117,9 @@ alias init_hosts="echo 'source ~/chris_setup/hosts/generic_hosts' >> ~/etc/hosts
 alias phxdocker="xhost +si:localuser:root && catkin-docker run"
 
 # SSH Keys
-alias removesshkey='f(){ sed -i '$1d' ~/.ssh/known_hosts; unset -f f; }; f'
+function removesshkey () {
+    sed -i '$1d' ~/.ssh/known_hosts
+}
 
 # SSH
 alias sshkeygen='ssh-keygen -t rsa -b 4096'
