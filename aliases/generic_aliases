@@ -64,6 +64,8 @@ function unsource_ros () {
     unset AMENT_PREFIX_PATH
     unset ROS_LOCALHOST_ONLY
     unset ROS_DOMAIN_ID
+    unset PWD
+    unset COLCON_PREFIX_PATH
 }
 
 # Catkin
