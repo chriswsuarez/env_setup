@@ -35,7 +35,7 @@
 192.168.11.31	hololens_nrg1
 192.168.11.32	hololens_nrg2
 192.168.11.33	hololens_nrg3
-192.168.11.99 m17_vm_augre
+192.168.11.99   m17_vm_augre
 192.168.11.100	m17_augre
 192.168.11.101	nuvo_augre
 192.168.11.102	zotac_augre
@@ -51,15 +51,6 @@
 100.96.1.6	beaver_vpn
 100.96.1.8	nuvo_vpn
 100.96.1.34	xavier_vpn
-
-# Field Demo
-172.29.184.74	regal_field
-172.29.184.72	m17_field
-172.29.184.162	tablet_field
-172.29.184.161	holo_arl_field
-172.29.184.76	holo_nrg_field
-172.29.184.159	regal_mac_field
-172.29.184.73	jackal_field
 
 # Silvus
 172.20.145.128  silvus1

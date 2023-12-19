@@ -2,10 +2,6 @@
 # Git
 alias gitchris='git config --global user.name chriswsuarez && git config --global user.email chriswsuarez@utexas.edu'
 
-# VCS
-alias vpull='vcs pull'
-alias vstatus='vcs status'
-
 # File navigation
 alias ..='cd ../../'
 alias ...='cd ../../../'
@@ -23,8 +19,6 @@ alias .7='cd ../../../../../../../'
 alias sws='source ./devel/setup.bash'
 alias sis='source ./install/setup.bash'
 alias sds='source ./docker-build/install/setup.bash'
-alias src_chris='source ~/chris_setup/aliases/chris_aliases'
-alias initrc_aliases="echo 'source ~/chris_setup/aliases/generic_aliases' >> ~/.bashrc" 
 
 # ROS
 alias killros='killall -9 roscore ; killall -9 rosmaster'
@@ -110,13 +104,6 @@ function rosmaster () {
     export ROS_MASTER_URI=http://$ROSIP:11311
     export ROS_IP=$ROSIP
 }
-
-
-# Hosts
-alias init_hosts="echo 'source ~/chris_setup/hosts/generic_hosts' >> ~/etc/hosts"
-
-# Phoenix Docker
-alias phxdocker="xhost +si:localuser:root && catkin-docker run"
 
 # SSH Keys
 function removesshkey () {
