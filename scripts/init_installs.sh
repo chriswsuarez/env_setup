@@ -20,6 +20,9 @@ fi
 # Add newline to bashrc before we make changes
 echo -e "\n" >> ~/.bashrc
 
+# Add the default path var in bashrc so we can unsource ROS if needed
+echo "DEFAULT_PATH=$PATH" >> ~/.bashrc 
+
 # Git
 sudo apt install -y git
 git config --global user.name "chriswsuarez"
