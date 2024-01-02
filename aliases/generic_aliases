@@ -40,7 +40,8 @@ function unsource_ros () {
     unset ROS_DISTRO
     unset PYTHONPATH
     unset LD_LIBRARY_PATH
-    # Unser how to deal with PATH
+    unset PATH
+    PATH=$DEFAULT_PATH
 
     # ROS 1
     unset ROS_PACKAGE_PATH
