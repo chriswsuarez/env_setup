@@ -1,0 +1,28 @@
+alias safc='source ~/afc_ws/devel/setup.bash'
+
+alias augre_docker='cd ~/afc_ws/src/afc_demos/docker/augre/ && docker compose up -d && docker exec -ti augre bash'
+alias object_detection_docker='cd ~/afc_ws/src/afc_demos/docker/object_detection/ && docker compose up -d && docker exec -ti object_detection bash'
+
+alias augre='roslaunch afc_demos full_demo.launch robot:=$ROBOT use_database:=true'
+alias augreo='roslaunch afc_demos full_demo.launch robot:=$ROBOT use_database:=true enable_detection:=true'
+alias augrec='roslaunch afc_demos full_demo.launch robot:=$ROBOT use_database:=true enable_detection:=true enable_cot:=true'
+alias augred='roslaunch afc_demos full_demo.launch robot:=$ROBOT use_database:=true enable_detection:=true enable_darknet:=true'
+alias augrer='roslaunch afc_demos full_demo.launch robot:=$ROBOT use_database:=true enable_detection:=true enable_retinanet:=true'
+alias objdet='roslaunch object_detection object_detection.launch robot:=$ROBOT'
+alias objdetd='roslaunch object_detection object_detection.launch robot:=$ROBOT enable_darknet:=true'
+alias objdetr='roslaunch object_detection object_detection.launch robot:=$ROBOT enable_retinanet:=true'
+
+alias resetna='rosservice call /$ROBOT/robot_asa_node/reset_nearest_anchor "{}"'
+alias oakd_converion='roslaunch oakd_camera darknet_conversion.launch robot:=$ROBOT'
+
+# Phoenix
+alias save_phx_map='rosrun map_server map_saver map:=/walrus/point_cloud_cache/renderers/full_map'
+alias save_phx_map_jackal='rosrun map_server map_saver map:=/jackal/point_cloud_cache/renderers/full_map'
+alias save_map='rosrun map_server map_saver map:=/walrus/gmap'
+alias teleophx_philbart='phxlaunch husky_control teleoperation_station.launch'
+alias teleophx_jackal='phxlaunch jackal_control jackal_operation_station.launch'
+
+# AugRE Servers
+alias robofleet_server='cd ~/robofleet/robofleet_server && yarn start'
+alias augre_db_server='cd ~/postgrest && postgrest augre_api.conf'
+alias augre_img_server='cd ~/augre_images && python3 -m http.server 4002'

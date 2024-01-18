@@ -3,17 +3,24 @@
 alias gitchris='git config --global user.name chriswsuarez && git config --global user.email chriswsuarez@utexas.edu'
 
 # File navigation
-alias ..='cd ../../'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
 alias .....='cd ../../../../../'
-alias ......='cd ../../../../../../'
-alias .......='cd ../../../../../../../'
-alias .3='cd ../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../../'
-alias .6='cd ../../../../../../'
-alias .7='cd ../../../../../../../'
+function .. () {
+    reg='^[0-9]+$'
+    if [ -z "$1" ]; then
+        cd ../..
+    elif ! [[ $1 =~ $reg ]] ; then
+        echo "Arg passed must be integer"
+    elif [[ $PWD == *$HOME* ]]; then
+        LEVEL=`echo "3 + $1" | bc`
+        cd $(echo $PWD | cut -f1-$LEVEL -d '/')
+    else
+        LEVEL=`echo "1 + $1" | bc`
+        cd $(echo $PWD | cut -f1-$LEVEL -d '/')
+    fi
+}
+
 
 # Sourcing and init bashrc
 alias sws='source ./devel/setup.bash'
@@ -64,12 +71,13 @@ function unsource_ros () {
 }
 
 # Catkin
-alias cb='catkin build'
-alias cbr='catkin build -DCMAKE_BUILD_TYPE=Release'
-alias cbd='catkin build -DCMAKE_BUILD_TYPE=Debug'
-alias cbrd='catkin build -DCMAKE_BUILD_TYPE=RelWithDebInfo'
-alias extend_melodic='catkin config --extend /opt/ros/melodic'
-alias extend_noetic='catkin config --extend /opt/ros/noetic'
+alias catb='catkin build'
+alias catbr='catkin build -DCMAKE_BUILD_TYPE=Release'
+alias catbd='catkin build -DCMAKE_BUILD_TYPE=Debug'
+alias catbrd='catkin build -DCMAKE_BUILD_TYPE=RelWithDebInfo'
+function catextend () {
+    catkin config --extend /opt/ros/$1
+}
 
 # Docker
 alias dxhost='xhost +si:localuser:root'
@@ -79,9 +87,7 @@ alias dcb='docker compose build'
 alias dimg='docker image'
 alias dcnt='docker container'
 alias dload='docker load <'
-alias ros_docker='xhost +si:localuser:root && cd ~/chris_setup/docker/noetic-desktop/ && docker compose up -d && docker exec -ti noetic-desktop bash'
-alias augre_docker='cd ~/afc_ws/src/afc_demos/docker/augre/ && docker compose up -d && docker exec -ti augre bash'
-alias object_detection_docker='cd ~/afc_ws/src/afc_demos/docker/object_detection/ && docker compose up -d && docker exec -ti object_detection bash'
+alias noetic_docker='xhost +si:localuser:root && cd ~/chris_setup/docker/noetic-desktop/ && docker compose up -d && docker exec -ti noetic-desktop bash'
 
 # Pkgs
 alias grepdpkg='dpkg -l | grep'
@@ -93,7 +99,7 @@ function cudaenv () {
     export PATH="/usr/local/cuda-$1/bin:$PATH"
 }
 
-# Generic ROS Networking
+# Generic ROS 1 Networking
 alias localmaster='export ROS_MASTER_URI=http://localhost:11311 && export ROS_IP=127.0.0.1'
 function rosip () {
     ROSIP="$(ifconfig | grep -A 1 $1 | tail -1 | cut -c 14- | cut -d " " -f 1)"
@@ -106,38 +112,40 @@ function rosmaster () {
     export ROS_IP=$ROSIP
 }
 
-# SSH Keys
+# SSH
+alias sshkeygen='ssh-keygen -t rsa -b 4096'
 function removesshkey () {
     sed -i '$1d' ~/.ssh/known_hosts
 }
 
 # SSH
-alias sshkeygen='ssh-keygen -t rsa -b 4096'
-alias sshm17='ssh -X nrgadmin@m17'
-alias sshm17augre='ssh -X nrgadmin@m17_augre'
-alias sshm17ut='ssh -X nrgadmin@m17_ut'
-alias sshm17vpn='ssh -X nrgadmin@m17_vpn'
-alias sshnuvo='ssh -X nrgadmin@nuvo'
-alias sshnuvovpn='ssh -X nrgadmin@nuvo_vpn'
-alias sshnuvout='ssh -X nrgadmin@nuvo_ut'
-alias sshnuvoaugre='ssh -X nrgadmin@nuvo_augre'
-alias sshzotac='ssh -X nrgadmin@zotac'
-alias sshzotacaugre='ssh -X nrgadmin@zotac_augre'
-alias sshaugredb='ssh -X augre@augre_db'
-alias sshxavier='ssh -X xavier@xavier'
-alias sshwalrus='ssh -X dsat@walrus'
-alias sshprowl='ssh -p 2401 traclabs@prowl'
-alias sshjackal='ssh -X nrgadmin@jackal'
-alias sshjackaleth='ssh -X nrgadmin@jackal_eth'
-alias sshjackalut='ssh -X nrgadmin@jackal_ut'
-alias sshjackalfield='ssh -X nrgadmin@jackal_field'
-alias sshjackalaugre='ssh -X nrgadmin@jackal_augre'
-alias sshphilbart='ssh -X nrgadmin@philbart'
-alias sshphilbarteth='ssh -X nrgadmin@philbart_eth'
-alias sshphilbartut='ssh -X nrgadmin@phibart_ut'
-alias sshphilbartaugre='ssh -X nrgadmin@philbart_augre'
-alias sshvaultbotut='ssh -X nrgadmin@vaultbot_augre'
-alias sshvaultbotaugre='ssh -X nrgadmin@vaultbot_augre'
+function sshinto () {
+    if [ -z "$1" ]; then
+        echo "Must pass at least an IP address or hostname as the first argument.  Username as optional second arg."
+    elif [ -z "$2" ]; then
+        ssh -X nrgadmin@$1
+    else
+        ssh -X $2@$1
+    fi
+}
+
+# Demo launches
+alias phoenix='phxlaunch phoenix_launch $ROBOT.xlaunch'
+alias phxteleop='source ~/phoenix/phoenix-r1/install/setup.bash && roslaunch ~/phoenix/phoenix-r1/$ROBOT_teleop.launch'
 
 # ----- Deprecated -----
 alias reset_clock='invoke-rc.d chrony restart'
+function sync_clock () {
+    reg='^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$'
+    if ! [[ $1 =~ $reg ]] ; then
+        echo "Arg passed must be IP address"
+    else
+        /etc/init.d/chrony stop
+        sudo ntpdate $1
+        /etc/init.d/chrony start
+    fi
+
+}
+
+# Window WSL commands
+alias cdwsldev='cd /mnt/c/Users/nrgadmin/Development'
