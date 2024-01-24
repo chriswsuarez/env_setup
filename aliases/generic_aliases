@@ -118,17 +118,6 @@ function removesshkey () {
     sed -i '$1d' ~/.ssh/known_hosts
 }
 
-# SSH
-function sshinto () {
-    if [ -z "$1" ]; then
-        echo "Must pass at least an IP address or hostname as the first argument.  Username as optional second arg."
-    elif [ -z "$2" ]; then
-        ssh -X nrgadmin@$1
-    else
-        ssh -X $2@$1
-    fi
-}
-
 # Demo launches
 alias phoenix='phxlaunch phoenix_launch $ROBOT.xlaunch'
 alias phxteleop='source ~/phoenix/phoenix-r1/install/setup.bash && roslaunch ~/phoenix/phoenix-r1/$ROBOT_teleop.launch'
