@@ -16,11 +16,9 @@ alias resetna='rosservice call /$ROBOT/robot_asa_node/reset_nearest_anchor "{}"'
 alias oakd_converion='roslaunch oakd_camera darknet_conversion.launch robot:=$ROBOT'
 
 # Phoenix
-alias save_phx_map='rosrun map_server map_saver map:=/walrus/point_cloud_cache/renderers/full_map'
-alias save_phx_map_jackal='rosrun map_server map_saver map:=/jackal/point_cloud_cache/renderers/full_map'
-alias save_map='rosrun map_server map_saver map:=/walrus/gmap'
-alias teleophx_philbart='phxlaunch husky_control teleoperation_station.launch'
-alias teleophx_jackal='phxlaunch jackal_control jackal_operation_station.launch'
+alias phoenix='phxlaunch phoenix_launch $ROBOT.xlaunch'
+alias phxteleoponly='source ~/phoenix/phoenix-r1/install/setup.bash && roslaunch ~/phoenix/phoenix-r1/$ROBOT_teleop.launch'
+alias save_phx_map='rosrun map_server map_saver map:=/$ROBOT/point_cloud_cache/renderers/full_map'
 
 # AugRE Servers
 alias robofleet_server='cd ~/robofleet/robofleet_server && yarn start'
