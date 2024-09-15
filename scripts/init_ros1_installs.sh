@@ -10,8 +10,6 @@ if [[ $DISTRIB_RELEASE = "18.04" ]]; then
     ROS_DISTRO="melodic"
 elif [[ $DISTRIB_RELEASE = "20.04" ]]; then
     ROS_DISTRO="noetic"
-elif [[ $DISTRIB_RELEASE = "22.04" ]]; then
-    ROS_DISTRO="iron"
 else
     echo "Unsupported Ubuntu version"
     exit 1
@@ -65,4 +63,5 @@ else
 fi
 
 echo "source ~/env_setup/aliases/generic_aliases" >> ~/.bashrc
+echo "source ~/env_setup/aliases/ros1_aliases" >> ~/.bashrc
 source ~/.bashrc
