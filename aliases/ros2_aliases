@@ -1,0 +1,18 @@
+# Colcon
+alias colb='colcon build'
+alias colbsl='colcon build --symlink-install'
+
+# ROS 2 Commands
+alias rnl='ros2 node list'
+alias rni='ros2 node info'
+alias rnlg='ros2 node list | grep'
+alias rtl='ros2 topic list'
+alias rti='ros2 topic info'
+alias rtlg='ros2 topic list | grep'
+alias rpl='ros2 param list'
+alias rplg='ros2 param list | grep'
+alias rpg='ros2 param get'
+alias rps='ros2 param set'
+alias rsl='ros2 service list'
+alias rsi='ros2 service info'
+alias rslg='ros2 service list | grep'
