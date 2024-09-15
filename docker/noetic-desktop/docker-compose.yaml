@@ -6,11 +6,10 @@ services:
     container_name: noetic-desktop
     build:
       context: ./../../..
-      dockerfile: chris_setup/docker/noetic-desktop/Dockerfile
+      dockerfile: env_setup/docker/noetic-desktop/Dockerfile
     network_mode: host
     volumes:
-      - ${HOME}/chris_setup:/root/chris_setup
-      - ${HOME}/afc_ws:/root/afc_ws
+      - ${HOME}/env_setup:/root/env_setup
       # mount the X11 socket to enable graphics display
       - /tmp/.X11-unix:/tmp/.X11-unix
       # required for non-nvidia users, comment out for nvidia users
