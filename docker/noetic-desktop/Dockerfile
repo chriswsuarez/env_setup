@@ -30,4 +30,5 @@ RUN apt update && apt upgrade -y \
 SHELL ["/bin/bash", "-l", "-c"]
 RUN echo -e "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc \
     && echo -e "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.profile \
-    && echo -e "source ~/env_setup/aliases/generic_aliases" >> ~/.bashrc
+    && echo -e "source ~/env_setup/aliases/generic_aliases" >> ~/.bashrc \
+    && echo -e "source ~/env_setup/aliases/ros1_aliases" >> ~/.bashrc
