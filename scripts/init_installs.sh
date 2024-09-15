@@ -64,5 +64,5 @@ else
     echo "ROS not installed"
 fi
 
-echo "source ~/chris_setup/aliases/generic_aliases" >> ~/.bashrc
+echo "source ~/env_setup/aliases/generic_aliases" >> ~/.bashrc
 source ~/.bashrc
