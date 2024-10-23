@@ -2,6 +2,9 @@
 alias colb='colcon build'
 alias colbsl='colcon build --symlink-install'
 
+# Sourcing and init bashrc
+alias sis='source ./install/setup.bash'
+
 # ROS 2 Commands
 alias rnl='ros2 node list'
 alias rni='ros2 node info'
@@ -16,3 +19,18 @@ alias rps='ros2 param set'
 alias rsl='ros2 service list'
 alias rsi='ros2 service info'
 alias rslg='ros2 service list | grep'
+alias rpkl='ros2 pkg list'
+alias rpklg='ros2 pkg list | grep'
+function roscd () {
+    ROS_PATH="$(ros2 pkg prefix $1)"
+
+    if [[ $ROS_PATH != "/"* ]] ; then
+        echo $ROS_PATH
+        return 1
+    elif [[ $ROS_PATH == "/opt/ros/"* ]] ; then 
+        cd "$ROS_PATH/share/$1"
+        return 1
+    else
+        cd $ROS_PATH
+    fi
+}
