@@ -35,7 +35,7 @@ function rosmaster () {
     reg='^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$'
     if ! [[ $ROSMASTER =~ $reg ]] ; then
         echo "Could not find an IP address for host: $1"
-        return 1
+        return
     fi
 
     export ROS_MASTER_URI=http://$ROSMASTER:11311
@@ -49,7 +49,7 @@ function rosmaster () {
         if [ "$(echo $ROSMASTER | cut -d "." -f1-3)" == "$(echo $LOCALIP | cut -d "." -f1-3)" ] ; then
             export ROS_IP=$LOCALIP
             echo "ROS_IP set: $ROS_IP"
-            return 1
+            return
         else
             ((i+=1))
             LOCALIP="$(hostname -i | cut -d " " -f $i)"
@@ -68,7 +68,7 @@ function rosmaster () {
         if [ "$(echo $ROSMASTER | cut -d "." -f1-3)" == "$(echo $LOCALIP | cut -d "." -f1-3)" ] ; then
             export ROS_IP=$LOCALIP
             echo "ROS_IP set: $ROS_IP"
-            return 1
+            return
         else
             ((i+=1))
             LOCALIP="$(hostname -I | cut -d " " -f $i)"

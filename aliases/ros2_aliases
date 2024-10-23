@@ -26,10 +26,10 @@ function roscd () {
 
     if [[ $ROS_PATH != "/"* ]] ; then
         echo $ROS_PATH
-        return 1
+        return
     elif [[ $ROS_PATH == "/opt/ros/"* ]] ; then 
         cd "$ROS_PATH/share/$1"
-        return 1
+        return
     else
         cd $ROS_PATH
     fi
