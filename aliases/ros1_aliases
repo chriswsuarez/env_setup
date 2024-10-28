@@ -1,8 +1,8 @@
 # Catkin
-alias catb='catkin build'
-alias catbr='catkin build -DCMAKE_BUILD_TYPE=Release'
-alias catbd='catkin build -DCMAKE_BUILD_TYPE=Debug'
-alias catbrd='catkin build -DCMAKE_BUILD_TYPE=RelWithDebInfo'
+alias cb='catkin build'
+alias cbr='catkin build -DCMAKE_BUILD_TYPE=Release'
+alias cbd='catkin build -DCMAKE_BUILD_TYPE=Debug'
+alias cbrd='catkin build -DCMAKE_BUILD_TYPE=RelWithDebInfo'
 function catextend () {
     catkin config --extend /opt/ros/$1
 }

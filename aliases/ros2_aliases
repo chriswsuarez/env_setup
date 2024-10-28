@@ -1,6 +1,8 @@
 # Colcon
-alias colb='colcon build'
-alias colbsl='colcon build --symlink-install'
+alias cb='colcon build --symlink-install'
+alias cbr='colcon build --symlink-install -DCMAKE_BUILD_TYPE=Release'
+alias cbd='colcon build --symlink-install -DCMAKE_BUILD_TYPE=Debug'
+alias cbrd='colcon build --symlink-install -DCMAKE_BUILD_TYPE=RelWithDebInfo'
 
 # Sourcing and init bashrc
 alias sis='source ./install/setup.bash'
